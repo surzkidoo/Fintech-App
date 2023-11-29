@@ -21,9 +21,9 @@ function AddMoney(props) {
               </div>
     
               <div className="text-gray-900 text-[16px] font-semibold">Choose Payment Method</div>
-              <div className="p-3 rounded-md border flex items-center justify-between hover:bg-blue-50 hover:text-white">
-            <div className="">
-              <div onClick={()=>props.setIsCardDepositOpen(true)}  className="text-xs  text-gray-700">Credit/Debit Card</div>
+              <div onClick={()=>props.setIsCardDepositOpen(true)} className="p-3 rounded-md border flex items-center justify-between hover:bg-blue-50 hover:text-white">
+            <div className="" >
+              <div   className="text-xs  text-gray-700">Credit/Debit Card</div>
             </div>
             <div className="bg-blue-50 p-2 rounded-full flex items-center justify-center">
               {/* <BsCheck2Circle className=" text-blue-500" /> */}

@@ -15,7 +15,7 @@ export default function Dashboard() {
  },[isLogin,navigate])
   return (
    <div className="flex flex-row gap-2 w-full">
-    <div>
+    <div className='flex flex-1'>
       <Sidebar  sidebar={sidebar} setSidebar={setSidebar}/>
     </div>
     <div className="w-full">

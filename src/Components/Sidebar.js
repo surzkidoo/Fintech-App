@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineUser } from 'react-icons/ai'
+import { AiFillCloseCircle, AiOutlineUser } from 'react-icons/ai'
 import {BsArrowUpLeftSquare, BsBarChart, BsBell, BsBoxArrowDownRight, BsCalendar2Check, BsDashSquare, BsGear, BsInfoSquare, BsListCheck, BsUpload} from 'react-icons/bs'
 import { FaUpload, FaUser, FaUserAlt, FaUserFriends } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
@@ -9,10 +9,15 @@ export default function Sidebar(props) {
 
 
   return (
-    <div className={`w-[230px] absolute bg-white left-0 xl:static  shadow  ${!props.sidebar && 'hidden'}  xl:block`}>
+    <div className={`w-[250px] absolute bg-white left-0 xl:static border-r  shadow  ${!props.sidebar && 'hidden'}  xl:block`}>
+
       <div className=''>
- <div className='text-lg font-bold pl-4 mt-3'>
-      <span className=' text-blue-500 '>DeeL</span>Pay
+ <div className='text-lg font-bold pl-4 mt-3 justify-between flex items-center'><div>
+        <span className=' text-blue-500 '>Dail</span>Pay
+
+ </div>
+
+      <AiFillCloseCircle onClick={()=>props.setSidebar(false)} className='mr-1 xl:hidden'size={24}/>
      </div>
 
      <div className='flex flex-col mt-3 gap-2'>
@@ -29,7 +34,7 @@ export default function Sidebar(props) {
 
       </NavLink>
 
-      <NavLink to='/dashboard/payment' className={({isActive})=>isActive? activeLink : normalLink}>
+      <NavLink to='/dashboard/payment' onClick={()=>props.setSidebar(false)} className={({isActive})=>isActive? activeLink : normalLink}>
       <div>
           <BsUpload size={20}/>
         </div> 
@@ -39,7 +44,7 @@ export default function Sidebar(props) {
 
       </NavLink>
      
-      <NavLink to='/dashboard/activity' className={({isActive})=>isActive? activeLink : normalLink}>
+      <NavLink to='/dashboard/activity' onClick={()=>props.setSidebar(false)} className={({isActive})=>isActive? activeLink : normalLink}>
       <div>
           <BsInfoSquare size={20}/>
         </div> 
@@ -50,7 +55,7 @@ export default function Sidebar(props) {
       </NavLink>
 
 
-      <NavLink to='/dashboard/notification' className={({isActive})=>isActive? activeLink : normalLink}>
+      <NavLink to='/dashboard/notification' onClick={()=>props.setSidebar(false)} className={({isActive})=>isActive? activeLink : normalLink}>
       <div>
           <BsBell  size={20}/>
         </div> 
@@ -61,7 +66,7 @@ export default function Sidebar(props) {
       </NavLink>
 
 
-      <NavLink to='/dashboard/calander' className={({isActive})=>isActive? activeLink : normalLink}>
+      <NavLink to='/dashboard/calander' onClick={()=>props.setSidebar(false)}  className={({isActive})=>isActive? activeLink : normalLink}>
       <div>
           <BsCalendar2Check size={20}/>
         </div> 
@@ -93,7 +98,7 @@ export default function Sidebar(props) {
           Preference
         </div>
 
-        <NavLink to='/dashboard/account' className={({isActive})=>isActive? activeLink : normalLink}>
+        <NavLink to='/dashboard/account' onClick={()=>props.setSidebar(false)} className={({isActive})=>isActive? activeLink : normalLink}>
         <div>
           <AiOutlineUser size={20} />
         </div> 
@@ -104,7 +109,7 @@ export default function Sidebar(props) {
       </NavLink>
 
 
-      <NavLink to='/dashboard/settings' className={({isActive})=>isActive? activeLink : normalLink}>
+      <NavLink to='/dashboard/settings' onClick={()=>props.setSidebar(false)} className={({isActive})=>isActive? activeLink : normalLink}>
       <div>
           <BsGear size={20} />
         </div> 
